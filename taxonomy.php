@@ -9,12 +9,13 @@
     	<div class="row">
 			
     		<div class=" span8 offset2 portfolio-description">
+				<?php get_template_part( 'breadcrumbs' ); // Loads the breadcrumbs.php template. ?>
 
 				<article >
 					<?php get_template_part( 'loop-meta' ); // Loads the loop-meta.php template. ?>
 					<?php get_template_part( 'menu', 'portfolio' ); ?>
-
 				</article><!-- .hentry -->
+				
 			</div>
 			<!-- End portfolio-description -->
 

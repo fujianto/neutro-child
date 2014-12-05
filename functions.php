@@ -20,24 +20,10 @@ add_action( 'after_setup_theme', 'neutro_child_theme_setup', 11 );
  * @return void
  */
 function neutro_child_theme_setup() {
-	/* Load custom scripts. */
-	add_action( 'wp_enqueue_scripts', 'neutro_child_enqueue_scripts' );
 	/* Add custom menus. */
 	add_action( 'init', 'neutro_child_register_menus', 11 ); 
 	/* Add additional body classes */
 	add_filter( 'body_class', 'neutro_child_additional_body_classes' );  
-}
-
-/**
- * Enqueue javascripts for WordPress theme Frontend.
- * 
- * @since 1.0
- */
-function neutro_child_enqueue_scripts() {
-	if(get_post_type() ){
-		wp_enqueue_script( 'ajax-portfolio', get_stylesheet_directory_uri(). '/js/ajax-portfolio.js' , 
-			array('jquery'), false, true );
-	}
 }
 
 /**
@@ -58,7 +44,11 @@ function neutro_child_post_class($classes){
 
 add_filter( 'post_class', 'neutro_child_post_class');
 
-
+/**
+ * Add full width class for Archive and Page template taxonomy (Portfolio)
+ * @param  Array String $classes 
+ * @return Array String  additional body class
+ */
 function neutro_child_additional_body_classes($classes){
 	if(is_post_type_archive() || is_tax() ){
 		$classes[] = 'layout-1c';
@@ -71,13 +61,13 @@ function neutro_child_additional_body_classes($classes){
  * Registers custom nav menus for this theme.  The only extra menu is the 'Portfolio' menu.  It is only 
  * added if the 'portfolio_item' post type exists.  This is to be used with the 'CPT: Portfolio' plugin.
  *
- * @since  0.1.0
+ * @since  1.0
  * @access public
  * @return void
  */
 function neutro_child_register_menus() {
 
 	if ( post_type_exists( 'portfolio_item' ) )
-		register_nav_menu( 'portfolio', esc_html__( 'Portfolio', 'chun' ) );
+		register_nav_menu( 'portfolio', esc_html__( 'Portfolio', 'neutro-child' ) );
 }
 ?>
