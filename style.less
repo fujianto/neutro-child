@@ -1,0 +1,55 @@
+/*
+ Theme Name:   Neutro Child
+ Theme URI:    http://seotemplates.net/blog/theme/neutro-wordpress-theme/
+ Description:  Neutro Child Theme
+ Author:       Septian Ahmad Fujianto
+ Author URI:   http://seotemplates.net/
+ Template:     neutro
+ Version:      1.0
+ Tags: gray, white, green, blue, two-columns, three-columns, right-sidebar, responsive-layout, custom-background, custom-colors, custom-menu, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+ Text Domain:  neutro-child
+*/
+
+
+/* Theme customization starts here */
+@white: #fff;
+@btn-nav-green: #19c4cf;
+
+.portfolio-description{
+	margin-bottom: 3em;
+
+	h1{
+		text-align: center;
+	}
+}
+
+#menu-portfolio{
+	text-align: center;
+	margin-top: 1.5em;
+		ul {
+			margin: 0 0 15px;
+			list-style: none;
+			li{
+				display: inline-block;
+				position: relative;
+				margin: 0 0 10px;	
+
+				a{
+					display: inline-block;
+					margin: 0 5px;
+					padding: 0.8em 1em;
+					-moz-box-sizing: border-box;
+					box-sizing: border-box;
+					background-color: @btn-nav-green;
+				    color: @white;
+				    font-size: 18px;
+				    text-decoration: none;
+					padding-bottom: 1em; 
+				        &:hover{
+				           color: @white;
+				           background-color: darken(@btn-nav-green, 5%);
+				        }
+				}
+			}
+		}
+}
