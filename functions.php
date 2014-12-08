@@ -35,7 +35,7 @@ function neutro_child_theme_setup() {
  */
 function neutro_child_post_class($classes){	
 	/*	Don't add .item on singular post type */
-	if(get_post_type() && is_page() ){
+	if(get_post_type() && is_page_template('page-template-portfolio.php') ){
 		$classes[] = 'item';
 	}
 
